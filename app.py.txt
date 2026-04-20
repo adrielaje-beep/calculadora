@@ -1,0 +1,83 @@
+# Calculadora avanzada de tabla de verdad (0 y 1)
+
+import itertools
+import re
+
+# ===== OPERADORES LÓGICOS =====
+def AND(p, q): return p & q
+def OR(p, q): return p | q
+def NOT(p): return 1 - p
+def XOR(p, q): return p ^ q
+def IMPLIES(p, q): return (1 - p) | q
+def BICOND(p, q): return int(p == q)
+def NAND(p, q): return 1 - (p & q)
+def NOR(p, q): return 1 - (p | q)
+
+# ===== NORMALIZAR EXPRESIÓN =====
+def convertir_expresion(expr):
+    # Agrupadores equivalentes
+    expr = expr.replace("[", "(").replace("]", ")")
+    expr = expr.replace("{", "(").replace("}", ")")
+
+    # Operadores lógicos (símbolos)
+    expr = expr.replace("∧", "AND")
+    expr = expr.replace("∨", "OR")
+    expr = expr.replace("¬", "NOT")
+    expr = expr.replace("⊕", "XOR")
+    expr = expr.replace("→", "IMPLIES")
+    expr = expr.replace("↔", "BICOND")
+    expr = expr.replace("↑", "NAND")
+    expr = expr.replace("↓", "NOR")
+
+    # También acepta palabras
+    expr = expr.replace("and", "AND")
+    expr = expr.replace("or", "OR")
+    expr = expr.replace("not", "NOT")
+
+    # Ajustar formato tipo función
+    # p AND q -> AND(p,q)
+    expr = re.sub(r'(\w+)\s*AND\s*(\w+)', r'AND(\1,\2)', expr)
+    expr = re.sub(r'(\w+)\s*OR\s*(\w+)', r'OR(\1,\2)', expr)
+    expr = re.sub(r'(\w+)\s*XOR\s*(\w+)', r'XOR(\1,\2)', expr)
+    expr = re.sub(r'(\w+)\s*IMPLIES\s*(\w+)', r'IMPLIES(\1,\2)', expr)
+    expr = re.sub(r'(\w+)\s*BICOND\s*(\w+)', r'BICOND(\1,\2)', expr)
+    expr = re.sub(r'(\w+)\s*NAND\s*(\w+)', r'NAND(\1,\2)', expr)
+    expr = re.sub(r'(\w+)\s*NOR\s*(\w+)', r'NOR(\1,\2)', expr)
+
+    # NOT p -> NOT(p)
+    expr = re.sub(r'NOT\s*(\w+)', r'NOT(\1)', expr)
+
+    return expr
+
+# ===== EXTRAER VARIABLES =====
+def obtener_variables(expr):
+    return sorted(set(re.findall(r'\b[a-zA-Z]\b', expr)))
+
+# ===== GENERAR TABLA =====
+def tabla_verdad(expr):
+    expr = convertir_expresion(expr)
+    variables = obtener_variables(expr)
+
+    print("\nTabla de verdad:\n")
+    print(" | ".join(variables) + " | Resultado")
+    print("-" * (len(variables)*4 + 12))
+
+    for valores in itertools.product([0,1], repeat=len(variables)):
+        contexto = dict(zip(variables, valores))
+        try:
+            resultado = eval(expr, globals(), contexto)
+            fila = " | ".join(str(contexto[v]) for v in variables)
+            print(f"{fila} |     {resultado}")
+        except Exception as e:
+            print("Error en la expresión:", e)
+            return
+
+# ===== PROGRAMA PRINCIPAL =====
+print("=== CALCULADORA DE TABLA DE VERDAD ===")
+print("Operadores disponibles:")
+print("∧ AND | ∨ OR | ¬ NOT | ⊕ XOR | → IMPLIES | ↔ BICOND | ↑ NAND | ↓ NOR")
+print("Puedes usar (), [], {} para agrupar\n")
+
+expr = input("Ingresa la expresión lógica: ")
+
+tabla_verdad(expr)

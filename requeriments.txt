@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./assets/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+
+    <!-- Primary Meta Tags -->
+    <title>Campus Virtual UG - 223</title>
+    <meta name="title" content="Campus Virtual UG" />
+    <meta name="description" content="Campus Virtual UG" />
+    <meta name="language" content="Spanish">
+    <meta name="author" content="Universidad de Guayaquil">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+    <meta name="copyright" content="Universidad de Guayaquil">
+    <meta name="revisit-after" content="0 days">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="cache-control" content="no-cache">
+
+    <link href="./assets/lib/metronic8/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/lib/metronic8/css/style.bundle.css?v=2" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/lib/sweetalert2/sweetalert2.min.css" />
+    <link rel="stylesheet" href="assets/css/custom.css?v=20" />
+
+</head>
+
+<body id="kt_body" class="bg-bodyf">
+    <div class="d-flex flex-column flex-root"
+        style="background-size:cover; background-repeat: no-repeat; background-image: url(./assets/images/bg/bg-3.jpg)">
+        <div class="d-flex flex-center  flex-column flex-lg-row flex-column-fluid">
+            <div class="d-flex flex-column flex-lg-row-fluid w-lg-50 p-5 order-2 order-lg-1">
+                <div class="d-flex flex-center flex-column flex-lg-row-fluid">
+                    <a href="#" class="mb-1">
+                        <img src="./assets/images/logo/UgHorizontalColor.svg" width="300" height="120" />
+                    </a>
+                    <div class="w-lg">
+                        <div class="text-center mb-5">
+                            <h1 class="text-dark fw-bolder mb-3">
+                                Campus Virtual 2
+                            </h1>
+                        </div>
+                        <form action="https://campusvirtual2.ug.edu.ec/login/index.php" class="form w-100" method="post"
+                            id="login" autocapitalize="false" autocomplete="false">
+                            <div class="col">
+                                <div class="fv-row mb-7">
+                                    <label for="username"
+                                        class="text-black form-label mb-2 font-weight-bold required">Usuario</label>
+                                    <input name="username" id="username" autocomplete="false" maxlength="20"
+                                        autocapitalize="false" class="form-control input-sm" type="text" required>
+                                </div>
+                                <div class="fv-row mb-7">
+                                    <label for="password"
+                                        class="text-black form-label mb-2 font-weight-bold required">Contraseña</label>
+                                    <div class="input-group fv-row mb-7">
+                                        <input class="form-control input-sm" type="password" id="password"
+                                            name="password" maxlength="20" autocomplete="false" autocapitalize="false"
+                                            value="" required>
+                                        <span class="input-group-text">
+                                            <i class="bi bi-eye-fill fs-3 togglePassword" style="cursor:pointer"
+                                                data-toggle="tooltip" data-placement="top"
+                                                title="Mostrar/Ocultar contraseña"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="d-grid gap-2 mt-10 mb-10">
+                                    <button type="button" class="btn btn-primary" id="loginbtn">Acceder</button>
+                                </div>
+                                <div class="fw-bolder mb-5 d-flex justify-content-center">
+                                    <a href="https://campusvirtual2.ug.edu.ec/login/forgot_password.php"
+                                        class="btn btn-sm btn-secondary">
+                                        Recuperar contraseña
+                                    </a>
+                                </div>
+                                <div class="d-flex flex-stack justify-content-center mt-10">
+                                    <div class="">
+                                        <a href="https://campusvirtual.ug.edu.ec/" class="btn btn-sm btn-icon rounded-circle">
+                                            <span class="svg-icon svg-icon-2 svg-icon-black"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M9.60001 11H21C21.6 11 22 11.4 22 12C22 12.6 21.6 13 21 13H9.60001V11Z"
+                                                        fill="currentColor" />
+                                                    <path opacity="0.3" d="M9.6 20V4L2.3 11.3C1.9 11.7 1.9 12.3 2.3 12.7L9.6 20Z" fill="currentColor" />
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="m-0">
+                                        <a href="https://campusvirtual.ug.edu.ec/" class="text-gray-600 link-primary fw-bold">
+                                            Regresar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <noscript>
+                            <div class="text-center">
+                                <h6 class="text-danger">Javascript está desabilitado en su navegador. <br>Por
+                                    favor
+                                    habilite para que el sitio funcione correctamente. </h6>
+                            </div>
+                        </noscript>
+                    </div>
+                </div>
+                <div class="d-flex flex-center flex-column-auto p-1 mt-10">
+                    <div class="d-flex align-items-center fw-bold fs-6">
+                        <a href="#" class="text-muted text-center text-hover-primary px-2">&copy; Universidad de
+                            Guayaquil</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="./assets/lib/metronic8/plugins/global/plugins.bundle.js"></script>
+<script src="./assets/lib/metronic8/js/scripts.bundle.js"></script>
+<script src="./assets/lib/blockui/jquery.blockUI.js"></script>
+<script src="./assets/lib/sweetalert2/sweetalert2.all.min.js"></script>
+<script src="./assets/lib/luxon/luxon.min.js"></script>
+<script src="./assets/js/site.js?v=4"></script>
+
+<script>
+    $(document).ready(function () {
+
+        TogglePassword("password", "togglePassword");
+
+        const params = new URLSearchParams(window.location.search);
+        var errorcode = params.get('errorcode');
+
+        if (errorcode != null) {
+            switch (errorcode) {
+                case "3":
+                    SweetAlert("", "Estimado(a) usuario, sus credenciales son incorrectas", "error")
+                    break;
+                case "4":
+                    SweetAlert("", "Estimado(a) usuario, ingrese nuevamente", "info")
+                    break;
+            }
+        }
+
+        window.history.replaceState(null, null, window.location.pathname);
+
+    });
+
+</script>
+
+</html>
